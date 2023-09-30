@@ -71,36 +71,55 @@ print("Bayesian Network Structure:")
 print(network)
 ```
 Create a Directed Graph
+
 ```
 G=nx.DiGraph()
 ```
+
 Define nodes and Edges
 
+```
 nodes=['Burglary', 'Earthquake', 'Alarm',' JohnCalls',' MaryCalls']
 edges=[('Burglary','Alarm'),('Earthquake','Alarm'),('Alarm','JohnCalls'),('Alarm','MaryCalls')]
+```
+
 Add nodes and Edges to the Graph
 
+```
 G.add_nodes_from(nodes)
 G.add_edges_from(edges)
+```
+
 Set the positions from nodes
 
+```
 pos={'Burglary':(0,0),'Earthquake':(2,0),'Alarm':(1,-2),'JohnCalls':(0,-4),'MaryCalls':(2,-4)}
 Initialize Gibbs Sampling for MCMC
 gibbs_sampler=GibbsSampling(network)
+```
 
 Set the number of samples
-num_samples=10000
 
-Perfrom MNMC sampling
+```
+num_samples=10000
+```
+
+Perform MNMC sampling
+
+```
 samples=gibbs_sampler.sample(size=num_samples)
+```
 
 Calculate approximate probabilities based on the samples
+```
 query_variable='Burglary' query_result=samples[query_variable].value_counts(normalize=True)
+```
 
 Print the approximate probabilities
-print('\n Approximate probabilities of {}:'.format(query_variable)) print(query_result)
 
-``
+```
+print('\n Approximate probabilities of {}:'.format(query_variable)) print(query_result)
+```
 
 ## Output :
 ![image](https://github.com/poojaanbu0/Ex-No.-4--Implementation-of-Approximate-Inference-in-Bayesian-Networks/assets/119390329/e1900012-8b21-4b0e-972e-aa13a23c927d)
