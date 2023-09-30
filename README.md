@@ -35,7 +35,7 @@ Developed by: Pooja A
 Register Number: 212222240072
 ```
 
-Import the necessary libraries
+# Import the necessary libraries
 ```
 from pgmpy.models import BayesianNetwork
 from pgmpy.factors.discrete import TabularCPD
@@ -118,7 +118,8 @@ query_variable='Burglary' query_result=samples[query_variable].value_counts(norm
 Print the approximate probabilities
 
 ```
-print('\n Approximate probabilities of {}:'.format(query_variable)) print(query_result)
+print('\n Approximate probabilities of {}:'.format(query_variable))
+print(query_result)
 ```
 
 ## Output :
