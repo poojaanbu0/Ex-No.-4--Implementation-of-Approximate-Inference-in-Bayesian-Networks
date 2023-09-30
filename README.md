@@ -35,7 +35,7 @@ Developed by: Pooja A
 Register Number: 212222240072
 ```
 
-# Import the necessary libraries
+### Import the necessary libraries
 ```
 from pgmpy.models import BayesianNetwork
 from pgmpy.factors.discrete import TabularCPD
